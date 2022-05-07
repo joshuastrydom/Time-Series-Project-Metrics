@@ -25,3 +25,4 @@ USA_data <-  df_fulldata |>
 USA_data <- USA_data |> select(-contains("M"))
 df_USA <- data.frame(USA_data)
 tibble::tibble(df_USA)
+
