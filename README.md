@@ -33,6 +33,12 @@ strDates <- as.Date(as.yearqtr(strDates), frac = 1)
 df_fulldata_trans$Date <- strDates
 tibble::tibble(df_fulldata_trans)
 
+#Convert characters to numerics
+char_columns <- sapply(df_fulldata_trans, is.character)
+data_as_num <- df_fulldata_trans
+data_as_num[,char_columns] <- as.data.frame(apply(data_as_num[,char_columns], 2, as.numeric))
+sapply(data_as_num, class)
+
 #Convert to time series data
 data_ts <- xts(df_fulldata_trans[,-1], order.by = as.Date(df_fulldata_trans[,1],"%Y/%q"))
 is.xts(data_ts)
