@@ -47,3 +47,9 @@ data_as_num
 data_ts <- xts(data_as_num[,-1], order.by = as.Date(data_as_num[,1],"%Y/%q"))
 is.xts(data_ts)
 
+#Time series for Canada
+canada_ts <- data_ts[,c(1:5,12)]
+
+#Time series for USA
+USA_ts <- data_ts[,c(6:12)]
+
