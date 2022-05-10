@@ -14,15 +14,14 @@ library(zoo)
 pacman::p_load(tsbox)
 library(tsbox)
 
-#Load dataset
 IFS_03_27_2017_19_08_48_11_timeSeries_IFS_03_27_2017_19_08_48_11_timeSeries <- read_csv("Data/IFS_03-27-2017 19-08-48-11_timeSeries_IFS_03-27-2017 19-08-48-11_timeSeries.csv")
 
-#Filtered for variables of interest
+
 df_fulldata = as.data.frame(IFS_03_27_2017_19_08_48_11_timeSeries_IFS_03_27_2017_19_08_48_11_timeSeries)
 df_fulldata <- df_fulldata |> filter(df_fulldata$`Indicator Code`=="PCPI_IX"|df_fulldata$`Indicator Code`=="ENSA_XDC_XDR_RATE"|df_fulldata$`Indicator Code`=="NGDP_R_SA_IX"|df_fulldata$`Indicator Code`=="FITB_PA"|df_fulldata$`Indicator Code`=="FM1_A2_SA_XDC"|df_fulldata$`Indicator Code`=="FM1_USD"|df_fulldata$`Indicator Code`=="FM1_SA_USD"|df_fulldata$`Indicator Code`=="PZPIOIL_USD_BBL_RATE") 
 df_fulldata <- df_fulldata |> filter(df_fulldata$`Country Name`=="Canada"|df_fulldata$`Country Name`=="United States"|df_fulldata$`Country Name`=="World")
 
-#Transpose
+
 fulldata_trans <- as.data.frame(t(df_fulldata))
 df_fulldata_trans <- fulldata_trans[-c(1:5),c(2,5,8,12,15,18,23,26,29,32,35,41)] |> drop_na()
 setnames(df_fulldata_trans, old = c("V2", "V5", "V8", "V12", "V15", "V18","V23", "V26","V29", "V32", "V35","V41"), new = c("M1-SA: Canada", "National Currency per SDR: Canada", "CPI: Canada", "Interest rate: Canada", "Real GDP: Canada", "CPI: USA","M1: USA","M1-SA: USA","Interest rate: USA","Real GDP: USA", "National Currency per SDR: USA","Oil Price per barrel(dollars): World"))
@@ -33,23 +32,17 @@ strDates <- as.Date(as.yearqtr(strDates), frac = 1)
 df_fulldata_trans$Date <- strDates
 tibble::tibble(df_fulldata_trans)
 
-#Convert characters to numerics
 char_columns <- sapply(df_fulldata_trans, is.character)
 data_as_num <- df_fulldata_trans
 data_as_num[,char_columns] <- as.data.frame(apply(data_as_num[,char_columns], 2, as.numeric))
 sapply(data_as_num, class)
 
-#Taking logs
 data_as_num[,c(2,3,4,6,7,8,9,11,12,13)] <- log(data_as_num[,c(2,3,4,6,7,8,9,11,12,13)])
 data_as_num
 
-#Convert to time series data
 data_ts <- xts(data_as_num[,-1], order.by = as.Date(data_as_num[,1],"%Y/%q"))
 is.xts(data_ts)
 
-#Time series for Canada
 canada_ts <- data_ts[,c(1:5,12)]
-
-#Time series for USA
 USA_ts <- data_ts[,c(6:12)]
 
