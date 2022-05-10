@@ -39,6 +39,10 @@ data_as_num <- df_fulldata_trans
 data_as_num[,char_columns] <- as.data.frame(apply(data_as_num[,char_columns], 2, as.numeric))
 sapply(data_as_num, class)
 
+#Taking logs
+data_as_num[,c(2,3,4,6,7,8,9,11,12,13)] <- log(data_as_num[,c(2,3,4,6,7,8,9,11,12,13)])
+data_as_num
+
 #Convert to time series data
 data_ts <- xts(df_fulldata_trans[,-1], order.by = as.Date(df_fulldata_trans[,1],"%Y/%q"))
 is.xts(data_ts)
