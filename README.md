@@ -118,3 +118,9 @@ USA_rGDP <- ggplot(USA_ts_plot_rGDP, aes(x = strDates)) +
     labs(title = "Real GDP: USA", x = "Date", y = "Real GDP", subtitle = "Log of Real GDP: USA") +
     theme_bw()
 USA_rGDP
+
+joined_canada <- ggarrange(world_oilprice, canada_CPI, canada_M1, canada_interest, canada_rGDP, canada_SDR, ncol = 2, nrow = 3, common.legend = TRUE, legend = "bottom")
+joined_canada
+
+joined_USA <- ggarrange(world_oilprice, USA_CPI, USA_M1, USA_interest, USA_rGDP, USA_SDR, ncol = 2, nrow = 3, common.legend = TRUE, legend = "bottom")
+joined_USA
