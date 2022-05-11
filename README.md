@@ -13,6 +13,9 @@ pacman::p_load(zoo)
 library(zoo)
 pacman::p_load(tsbox)
 library(tsbox)
+library(ggplot2)
+pacman::p_load(ggpubr)
+library(ggpubr)
 
 IFS_03_27_2017_19_08_48_11_timeSeries_IFS_03_27_2017_19_08_48_11_timeSeries <- read_csv("Data/IFS_03-27-2017 19-08-48-11_timeSeries_IFS_03-27-2017 19-08-48-11_timeSeries.csv")
 
