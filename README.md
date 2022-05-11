@@ -516,3 +516,18 @@ nr_level_world <- nrow(level_world)
 
 diff_world <- as.data.frame(diff(as.matrix(level_world), lag = 1))
 colnames(diff_world) <- c("Oil Price per barrell(dollars): World")
+
+
+adf.level_world.none <- list(
+    Oil.price = ur.df(level_world, type = 'none', selectlags = c("BIC")))
+adf.level_world.drift <- list(
+    Oil.price = ur.df(level_world, type = 'drift', selectlags = c("BIC")))
+adf.level_world.trend <- list(
+    Oil.price = ur.df(level_world, type = 'trend', selectlags = c("BIC")))
+
+adf.diff_world.none <- list(
+    Oil.price = ur.df(diff_world, type = 'none', selectlags = c("BIC")))
+adf.diff_world.drift <- list(
+    Oil.price = ur.df(diff_world, type = 'drift', selectlags = c("BIC")))
+adf.diff_world.trend <- list(
+    Oil.price = ur.df(diff_world, type = 'trend', selectlags = c("BIC")))
