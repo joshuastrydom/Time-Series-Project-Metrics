@@ -531,3 +531,22 @@ adf.diff_world.drift <- list(
     Oil.price = ur.df(diff_world, type = 'drift', selectlags = c("BIC")))
 adf.diff_world.trend <- list(
     Oil.price = ur.df(diff_world, type = 'trend', selectlags = c("BIC")))
+    
+#For Oil.price variable:
+#Level
+adf.level.n.world.Oil.price = ur.df(level_world, type = 'none', selectlags = c("BIC"))
+adf.level.d.world.Oil.price = ur.df(level_world, type = 'drift', selectlags = c("BIC"))
+adf.level.t.world.Oil.price = ur.df(level_world, type = 'trend', selectlags = c("BIC"))
+interp_urdf(adf.level.n.world.Oil.price, "5pct")
+interp_urdf(adf.level.d.world.Oil.price, "5pct")
+interp_urdf(adf.level.t.world.Oil.price, "5pct")
+##This indicates that a unit root is present, there is no trend, and there is no drift
+#Differenced
+adf.diff.n.world.Oil.price = ur.df(diff_world, type = 'none', selectlags = c("BIC"))
+adf.diff.d.world.Oil.price = ur.df(diff_world, type = 'drift', selectlags = c("BIC"))
+adf.diff.t.world.Oil.price = ur.df(diff_world, type = 'trend', selectlags = c("BIC"))
+interp_urdf(adf.diff.n.world.Oil.price, "5pct")
+interp_urdf(adf.diff.d.world.Oil.price, "5pct")
+interp_urdf(adf.diff.t.world.Oil.price, "5pct")
+##This indicates that there is no unit root, there is drift and there may or may not be a trend. 
+##The logarithm of M1-SA contains a unit root and can be stationary time series by differencing the first order.    
