@@ -297,4 +297,84 @@ interp_urdf <- function(urdf, level="5pct"){
     }
   } else warning('urdf model type is not one of none, drift, or trend')
   cat("========================================================================\n")
-}    
+}
+
+#For M1-SA variable:
+#Level
+adf.level.n.canada.M1.SA = ur.df(level_canada$`M1-SA: Canada`, type = 'none', selectlags = c("BIC"))
+adf.level.d.canada.M1.SA = ur.df(level_canada$`M1-SA: Canada`, type = 'drift', selectlags = c("BIC"))
+adf.level.t.canada.M1.SA = ur.df(level_canada$`M1-SA: Canada`, type = 'trend', selectlags = c("BIC"))
+interp_urdf(adf.level.n.canada.M1.SA, "5pct")
+interp_urdf(adf.level.d.canada.M1.SA, "5pct")
+interp_urdf(adf.level.t.canada.M1.SA, "5pct")
+#Differenced
+adf.diff.n.canada.M1.SA = ur.df(diff_canada$`M1-SA: Canada`, type = 'none', selectlags = c("BIC"))
+adf.diff.d.canada.M1.SA = ur.df(diff_canada$`M1-SA: Canada`, type = 'drift', selectlags = c("BIC"))
+adf.diff.t.canada.M1.SA = ur.df(diff_canada$`M1-SA: Canada`, type = 'trend', selectlags = c("BIC"))
+interp_urdf(adf.diff.n.canada.M1.SA, "5pct")
+interp_urdf(adf.diff.d.canada.M1.SA, "5pct")
+interp_urdf(adf.diff.t.canada.M1.SA, "5pct")
+
+#For CAD.per.SDR
+#Level
+adf.level.n.canada.CAD.per.SDR = ur.df(level_canada$`National Currency per SDR: Canada`, type = 'none', selectlags = c("BIC"))
+adf.level.d.canada.CAD.per.SDR = ur.df(level_canada$`National Currency per SDR: Canada`, type = 'drift', selectlags = c("BIC"))
+adf.level.t.canada.CAD.per.SDR = ur.df(level_canada$`National Currency per SDR: Canada`, type = 'trend', selectlags = c("BIC"))
+interp_urdf(adf.level.n.canada.CAD.per.SDR, "5pct")
+interp_urdf(adf.level.d.canada.CAD.per.SDR, "5pct")
+interp_urdf(adf.level.t.canada.CAD.per.SDR, "5pct")
+#Differenced
+adf.diff.n.canada.CAD.per.SDR = ur.df(diff_canada$`National Currency per SDR: Canada`, type = 'none', selectlags = c("BIC"))
+adf.diff.d.canada.CAD.per.SDR = ur.df(diff_canada$`National Currency per SDR: Canada`, type = 'drift', selectlags = c("BIC"))
+adf.diff.t.canada.CAD.per.SDR = ur.df(diff_canada$`National Currency per SDR: Canada`, type = 'trend', selectlags = c("BIC"))
+interp_urdf(adf.diff.n.canada.CAD.per.SDR, "5pct")
+interp_urdf(adf.diff.d.canada.CAD.per.SDR, "5pct")
+interp_urdf(adf.diff.t.canada.CAD.per.SDR, "5pct")
+
+#For CPI
+#Level
+adf.level.n.canada.CPI = ur.df(level_canada$`CPI: Canada`, type = 'none', selectlags = c("BIC"))
+adf.level.d.canada.CPI = ur.df(level_canada$`CPI: Canada`, type = 'drift', selectlags = c("BIC"))
+adf.level.t.canada.CPI = ur.df(level_canada$`CPI: Canada`, type = 'trend', selectlags = c("BIC"))
+interp_urdf(adf.level.n.canada.CPI, "5pct")
+interp_urdf(adf.level.d.canada.CPI, "5pct")
+interp_urdf(adf.level.t.canada.CPI, "5pct")
+#Differenced
+adf.diff.n.canada.CPI = ur.df(diff_canada$`CPI: Canada`, type = 'none', selectlags = c("BIC"))
+adf.diff.d.canada.CPI = ur.df(diff_canada$`CPI: Canada`, type = 'drift', selectlags = c("BIC"))
+adf.diff.t.canada.CPI = ur.df(diff_canada$`CPI: Canada`, type = 'trend', selectlags = c("BIC"))
+interp_urdf(adf.diff.n.canada.CPI, "5pct")
+interp_urdf(adf.diff.d.canada.CPI, "5pct")
+interp_urdf(adf.diff.t.canada.CPI, "5pct")
+
+#For Interest.rate
+#Level
+adf.level.n.canada.Interest.rate = ur.df(level_canada$`Interest rate: Canada`, type = 'none', selectlags = c("BIC"))
+adf.level.d.canada.Interest.rate = ur.df(level_canada$`Interest rate: Canada`, type = 'drift', selectlags = c("BIC"))
+adf.level.t.canada.Interest.rate = ur.df(level_canada$`Interest rate: Canada`, type = 'trend', selectlags = c("BIC"))
+interp_urdf(adf.level.n.canada.Interest.rate, "5pct")
+interp_urdf(adf.level.d.canada.Interest.rate, "5pct")
+interp_urdf(adf.level.t.canada.Interest.rate, "5pct")
+#Differenced
+adf.diff.n.canada.Interest.rate = ur.df(diff_canada$`Interest rate: Canada`, type = 'none', selectlags = c("BIC"))
+adf.diff.d.canada.Interest.rate = ur.df(diff_canada$`Interest rate: Canada`, type = 'drift', selectlags = c("BIC"))
+adf.diff.t.canada.Interest.rate = ur.df(diff_canada$`Interest rate: Canada`, type = 'trend', selectlags = c("BIC"))
+interp_urdf(adf.diff.n.canada.Interest.rate, "5pct")
+interp_urdf(adf.diff.d.canada.Interest.rate, "5pct")
+interp_urdf(adf.diff.t.canada.Interest.rate, "5pct")
+
+#For real.GDP
+#Level
+adf.level.n.canada.rGDP = ur.df(level_canada$`Real GDP: Canada`, type = 'none', selectlags = c("BIC"))
+adf.level.d.canada.rGDP = ur.df(level_canada$`Real GDP: Canada`, type = 'drift', selectlags = c("BIC"))
+adf.level.t.canada.rGDP = ur.df(level_canada$`Real GDP: Canada`, type = 'trend', selectlags = c("BIC"))
+interp_urdf(adf.level.n.canada.rGDP, "5pct")
+interp_urdf(adf.level.d.canada.rGDP, "5pct")
+interp_urdf(adf.level.t.canada.rGDP, "5pct")
+#Differenced
+adf.diff.n.canada.rGDP = ur.df(diff_canada$`Real GDP: Canada`, type = 'none', selectlags = c("BIC"))
+adf.diff.d.canada.rGDP = ur.df(diff_canada$`Real GDP: Canada`, type = 'drift', selectlags = c("BIC"))
+adf.diff.t.canada.rGDP = ur.df(diff_canada$`Real GDP: Canada`, type = 'trend', selectlags = c("BIC"))
+interp_urdf(adf.diff.n.canada.rGDP, "5pct")
+interp_urdf(adf.diff.d.canada.rGDP, "5pct")
+interp_urdf(adf.diff.t.canada.rGDP, "5pct")
