@@ -118,3 +118,10 @@ joined_canada
 
 joined_USA <- ggarrange(world_oilprice, USA_CPI, USA_M1, USA_interest, USA_rGDP, USA_SDR, ncol = 2, nrow = 3, common.legend = TRUE, legend = "bottom")
 joined_USA
+
+
+level_canada <- canada_ts[,c("M1-SA: Canada", "National Currency per SDR: Canada", "CPI: Canada", "Interest rate: Canada", "Real GDP: Canada")]
+nr_level_canada <- nrow(level_canada)
+
+diff_canada <- as.data.frame(diff(as.matrix(level_canada), lag = 1))
+colnames(diff_canada) <- c("M1-SA: Canada", "National Currency per SDR: Canada", "CPI: Canada", "Interest rate: Canada", "Real GDP: Canada")
