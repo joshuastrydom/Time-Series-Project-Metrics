@@ -404,3 +404,22 @@ adf.level_USA.trend <- list(
     CPI = ur.df(level_USA$`CPI: USA`, type = 'trend', selectlags = c("BIC")),
     Interest.rate = ur.df(level_USA$`Interest rate: USA`, type = 'trend', selectlags = c("BIC")),
     real.GDP = ur.df(level_USA$`Real GDP: USA`, type = 'trend', selectlags = c("BIC")))
+
+adf.diff_USA.none <- list(
+    M1.SA = ur.df(diff_USA$`M1-SA: USA`, type = 'none', selectlags = c("BIC")),
+    USD.per.SDR = ur.df(diff_USA$`National Currency per SDR: USA`, type = 'none', selectlags = c("BIC")),
+    CPI = ur.df(diff_USA$`CPI: USA`, type = 'none', selectlags = c("BIC")),
+    Interest.rate = ur.df(diff_USA$`Interest rate: USA`, type = 'none', selectlags = c("BIC")),
+    real.GDP = ur.df(diff_USA$`Real GDP: USA`, type = 'none', selectlags = c("BIC")))
+adf.diff_USA.drift <- list(
+    M1.SA = ur.df(diff_USA$`M1-SA: USA`, type = 'drift', selectlags = c("BIC")),
+    USD.per.SDR = ur.df(diff_USA$`National Currency per SDR: USA`, type = 'drift', selectlags = c("BIC")),
+    CPI = ur.df(diff_USA$`CPI: USA`, type = 'drift', selectlags = c("BIC")),
+    Interest.rate = ur.df(diff_USA$`Interest rate: USA`, type = 'drift', selectlags = c("BIC")),
+    real.GDP = ur.df(diff_USA$`Real GDP: USA`, type = 'drift', selectlags = c("BIC")))
+adf.diff_USA.trend <- list(
+    M1.SA = ur.df(diff_USA$`M1-SA: USA`, type = 'trend', selectlags = c("BIC")),
+    USD.per.SDR = ur.df(diff_USA$`National Currency per SDR: USA`, type = 'trend', selectlags = c("BIC")),
+    CPI = ur.df(diff_USA$`CPI: USA`, type = 'trend', selectlags = c("BIC")),
+    Interest.rate = ur.df(diff_USA$`Interest rate: USA`, type = 'trend', selectlags = c("BIC")),
+    real.GDP = ur.df(diff_USA$`Real GDP: USA`, type = 'trend', selectlags = c("BIC")))    
