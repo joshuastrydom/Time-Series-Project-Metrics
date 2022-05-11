@@ -49,3 +49,37 @@ is.xts(data_ts)
 canada_ts <- data_ts[,c(1:5,12)]
 USA_ts <- data_ts[,c(6:12)]
 
+canada_ts_plot_M1 <- canada_ts[, 1]
+canada_M1 <- ggplot(canada_ts_plot_M1, aes(x = strDates)) +
+    geom_line(aes(y=`M1-SA: Canada`), color = "darkred", alpha = 0.8, size = 1) +
+    labs(title = "M1-SA: Canada", x = "Date", y = "M1-SA", subtitle = "Log of M1_SA: Canada") +
+    theme_bw()
+canada_M1
+
+canada_ts_plot_SDR <- canada_ts[, 2]
+canada_SDR <- ggplot(canada_ts_plot_SDR, aes(x = strDates)) +
+    geom_line(aes(y=`National Currency per SDR: Canada`), color = "blue", alpha = 0.8, size = 1) +
+    labs(title = "National Currency per SDR: Canada", x = "Date", y = "National currency per SDR", subtitle = "Log of National Currency per SDR: Canada") +
+    theme_bw()
+canada_SDR
+
+canada_ts_plot_CPI <- canada_ts[, 3]
+canada_CPI <- ggplot(canada_ts_plot_CPI, aes(x = strDates)) +
+    geom_line(aes(y=`CPI: Canada`), color = "green", alpha = 0.8, size = 1) +
+    labs(title = "CPI: Canada", x = "Date", y = "CPI", subtitle = "Log of CPI: Canada") +
+    theme_bw()
+canada_CPI
+
+canada_ts_plot_interest <- canada_ts[, 4]
+canada_interest <- ggplot(canada_ts_plot_interest, aes(x = strDates)) +
+    geom_line(aes(y=`Interest rate: Canada`), color = "yellow", alpha = 0.8, size = 1) +
+    labs(title = "Interest rate: Canada", x = "Date", y = "Interest Rate", subtitle = "Interest rate: Canada") +
+    theme_bw()
+canada_interest
+
+canada_ts_plot_rGDP <- canada_ts[, 5]
+canada_rGDP <- ggplot(canada_ts_plot_rGDP, aes(x = strDates)) +
+    geom_line(aes(y=`Real GDP: Canada`), color = "orange", alpha = 0.8, size = 1) +
+    labs(title = "Real GDP: Canada", x = "Date", y = "Real GDP", subtitle = "Log of Real GDP: Canada") +
+    theme_bw()
+canada_rGDP
