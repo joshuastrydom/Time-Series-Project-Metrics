@@ -378,3 +378,10 @@ adf.diff.t.canada.rGDP = ur.df(diff_canada$`Real GDP: Canada`, type = 'trend', s
 interp_urdf(adf.diff.n.canada.rGDP, "5pct")
 interp_urdf(adf.diff.d.canada.rGDP, "5pct")
 interp_urdf(adf.diff.t.canada.rGDP, "5pct")
+
+
+level_USA <- USA_ts[,c("M1-SA: USA", "National Currency per SDR: USA", "CPI: USA", "Interest rate: USA", "Real GDP: USA")]
+nr_level_USA <- nrow(level_USA)
+
+diff_USA <- as.data.frame(diff(as.matrix(level_USA), lag = 1))
+colnames(diff_USA) <- c("M1-SA: USA", "National Currency per SDR: USA", "CPI: USA", "Interest rate: USA", "Real GDP: USA")
