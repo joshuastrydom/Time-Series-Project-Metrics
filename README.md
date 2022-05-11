@@ -125,3 +125,22 @@ nr_level_canada <- nrow(level_canada)
 
 diff_canada <- as.data.frame(diff(as.matrix(level_canada), lag = 1))
 colnames(diff_canada) <- c("M1-SA: Canada", "National Currency per SDR: Canada", "CPI: Canada", "Interest rate: Canada", "Real GDP: Canada")
+
+adf.level_canada.none <- list(
+    M1.SA = ur.df(level_canada$`M1-SA: Canada`, type = 'none', selectlags = c("BIC")),
+    CAD.per.SDR = ur.df(level_canada$`National Currency per SDR: Canada`, type = 'none', selectlags = c("BIC")),
+    CPI = ur.df(level_canada$`CPI: Canada`, type = 'none', selectlags = c("BIC")),
+    Interest.rate = ur.df(level_canada$`Interest rate: Canada`, type = 'none', selectlags = c("BIC")),
+    real.GDP = ur.df(level_canada$`Real GDP: Canada`, type = 'none', selectlags = c("BIC")))
+adf.level_canada.drift <- list(
+    M1.SA = ur.df(level_canada$`M1-SA: Canada`, type = 'drift', selectlags = c("BIC")),
+    CAD.per.SDR = ur.df(level_canada$`National Currency per SDR: Canada`, type = 'drift', selectlags = c("BIC")),
+    CPI = ur.df(level_canada$`CPI: Canada`, type = 'drift', selectlags = c("BIC")),
+    Interest.rate = ur.df(level_canada$`Interest rate: Canada`, type = 'drift', selectlags = c("BIC")),
+    real.GDP = ur.df(level_canada$`Real GDP: Canada`, type = 'drift', selectlags = c("BIC")))
+adf.level_canada.trend <- list(
+    M1.SA = ur.df(level_canada$`M1-SA: Canada`, type = 'trend', selectlags = c("BIC")),
+    CAD.per.SDR = ur.df(level_canada$`National Currency per SDR: Canada`, type = 'trend', selectlags = c("BIC")),
+    CPI = ur.df(level_canada$`CPI: Canada`, type = 'trend', selectlags = c("BIC")),
+    Interest.rate = ur.df(level_canada$`Interest rate: Canada`, type = 'trend', selectlags = c("BIC")),
+    real.GDP = ur.df(level_canada$`Real GDP: Canada`, type = 'trend', selectlags = c("BIC")))
