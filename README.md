@@ -23,7 +23,7 @@ library(urca)
 pacman::p_load(vars)
 library(vars)
 pacman::p_load(mfilter)
-library(mfilter)
+library(mFilter)
 pacman::p_load(forecast)
 library(forecast)
 
