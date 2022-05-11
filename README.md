@@ -509,3 +509,10 @@ adf.diff.t.USA.rGDP = ur.df(diff_USA$`Real GDP: USA`, type = 'trend', selectlags
 interp_urdf(adf.diff.n.USA.rGDP, "5pct")
 interp_urdf(adf.diff.d.USA.rGDP, "5pct")
 interp_urdf(adf.diff.t.USA.rGDP, "5pct")    
+
+
+level_world <- USA_ts[,7]
+nr_level_world <- nrow(level_world)
+
+diff_world <- as.data.frame(diff(as.matrix(level_world), lag = 1))
+colnames(diff_world) <- c("Oil Price per barrell(dollars): World")
