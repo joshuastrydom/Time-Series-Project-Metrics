@@ -59,7 +59,7 @@ canada_M1
 canada_ts_plot_SDR <- canada_ts[, 2]
 canada_SDR <- ggplot(canada_ts_plot_SDR, aes(x = strDates)) +
     geom_line(aes(y=`National Currency per SDR: Canada`), color = "blue", alpha = 0.8, size = 1) +
-    labs(title = "National Currency per SDR: Canada", x = "Date", y = "National currency per SDR", subtitle = "Log of National Currency per SDR: Canada") +
+    labs(title = "National Currency per SDR: Canada", x = "Date", y = "CAD per SDR", subtitle = "Log of National Currency per SDR: Canada") +
     theme_bw()
 canada_SDR
 
@@ -94,7 +94,7 @@ USA_M1
 USA_ts_plot_SDR <- USA_ts[, 6]
 USA_SDR <- ggplot(USA_ts_plot_SDR, aes(x = strDates)) +
     geom_line(aes(y=`National Currency per SDR: USA`), color = "blue", alpha = 0.8, size = 1) +
-    labs(title = "National Currency per SDR: USA", x = "Date", y = "National currency per SDR", subtitle = "Log of National Currency per SDR: USA") +
+    labs(title = "National Currency per SDR: USA", x = "Date", y = "USD per SDR", subtitle = "Log of National Currency per SDR: USA") +
     theme_bw()
 USA_SDR
 
