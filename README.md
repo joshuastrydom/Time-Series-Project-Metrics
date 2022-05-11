@@ -54,70 +54,60 @@ canada_M1 <- ggplot(canada_ts_plot_M1, aes(x = strDates)) +
     geom_line(aes(y=`M1-SA: Canada`), color = "darkred", alpha = 0.8, size = 1) +
     labs(title = "M1-SA: Canada", x = "Date", y = "M1-SA", subtitle = "Log of M1_SA: Canada") +
     theme_bw()
-canada_M1
 
 canada_ts_plot_SDR <- canada_ts[, 2]
 canada_SDR <- ggplot(canada_ts_plot_SDR, aes(x = strDates)) +
     geom_line(aes(y=`National Currency per SDR: Canada`), color = "blue", alpha = 0.8, size = 1) +
     labs(title = "National Currency per SDR: Canada", x = "Date", y = "CAD per SDR", subtitle = "Log of National Currency per SDR: Canada") +
     theme_bw()
-canada_SDR
 
 canada_ts_plot_CPI <- canada_ts[, 3]
 canada_CPI <- ggplot(canada_ts_plot_CPI, aes(x = strDates)) +
     geom_line(aes(y=`CPI: Canada`), color = "green", alpha = 0.8, size = 1) +
     labs(title = "CPI: Canada", x = "Date", y = "CPI", subtitle = "Log of CPI: Canada") +
     theme_bw()
-canada_CPI
 
 canada_ts_plot_interest <- canada_ts[, 4]
 canada_interest <- ggplot(canada_ts_plot_interest, aes(x = strDates)) +
     geom_line(aes(y=`Interest rate: Canada`), color = "yellow", alpha = 0.8, size = 1) +
     labs(title = "Interest rate: Canada", x = "Date", y = "Interest Rate", subtitle = "Interest rate: Canada") +
     theme_bw()
-canada_interest
 
 canada_ts_plot_rGDP <- canada_ts[, 5]
 canada_rGDP <- ggplot(canada_ts_plot_rGDP, aes(x = strDates)) +
     geom_line(aes(y=`Real GDP: Canada`), color = "orange", alpha = 0.8, size = 1) +
     labs(title = "Real GDP: Canada", x = "Date", y = "Real GDP", subtitle = "Log of Real GDP: Canada") +
     theme_bw()
-canada_rGDP
 
 USA_ts_plot_M1 <- USA_ts[, 3]
 USA_M1 <- ggplot(USA_ts_plot_M1, aes(x = strDates)) +
     geom_line(aes(y=`M1-SA: USA`), color = "darkred", alpha = 0.8, size = 1) +
     labs(title = "M1-SA: USA", x = "Date", y = "M1-SA", subtitle = "Log of M1_SA: USA") +
     theme_bw()
-USA_M1
 
 USA_ts_plot_SDR <- USA_ts[, 6]
 USA_SDR <- ggplot(USA_ts_plot_SDR, aes(x = strDates)) +
     geom_line(aes(y=`National Currency per SDR: USA`), color = "blue", alpha = 0.8, size = 1) +
     labs(title = "National Currency per SDR: USA", x = "Date", y = "USD per SDR", subtitle = "Log of National Currency per SDR: USA") +
     theme_bw()
-USA_SDR
 
 USA_ts_plot_CPI <- USA_ts[, 1]
 USA_CPI <- ggplot(USA_ts_plot_CPI, aes(x = strDates)) +
     geom_line(aes(y=`CPI: USA`), color = "green", alpha = 0.8, size = 1) +
     labs(title = "CPI: USA", x = "Date", y = "CPI", subtitle = "Log of CPI: USA") +
     theme_bw()
-USA_CPI
 
 USA_ts_plot_interest <- USA_ts[, 4]
 USA_interest <- ggplot(USA_ts_plot_interest, aes(x = strDates)) +
     geom_line(aes(y=`Interest rate: USA`), color = "yellow", alpha = 0.8, size = 1) +
     labs(title = "Interest rate: USA", x = "Date", y = "Interest Rate", subtitle = "Interest rate: USA") +
     theme_bw()
-USA_interest
 
 USA_ts_plot_rGDP <- USA_ts[, 5]
 USA_rGDP <- ggplot(USA_ts_plot_rGDP, aes(x = strDates)) +
     geom_line(aes(y=`Real GDP: USA`), color = "orange", alpha = 0.8, size = 1) +
     labs(title = "Real GDP: USA", x = "Date", y = "Real GDP", subtitle = "Log of Real GDP: USA") +
     theme_bw()
-USA_rGDP
 
 joined_canada <- ggarrange(world_oilprice, canada_CPI, canada_M1, canada_interest, canada_rGDP, canada_SDR, ncol = 2, nrow = 3, common.legend = TRUE, legend = "bottom")
 joined_canada
