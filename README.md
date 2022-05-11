@@ -423,3 +423,83 @@ adf.diff_USA.trend <- list(
     CPI = ur.df(diff_USA$`CPI: USA`, type = 'trend', selectlags = c("BIC")),
     Interest.rate = ur.df(diff_USA$`Interest rate: USA`, type = 'trend', selectlags = c("BIC")),
     real.GDP = ur.df(diff_USA$`Real GDP: USA`, type = 'trend', selectlags = c("BIC")))    
+
+#For M1-SA variable:
+#Level
+adf.level.n.USA.M1.SA = ur.df(level_USA$`M1-SA: USA`, type = 'none', selectlags = c("BIC"))
+adf.level.d.USA.M1.SA = ur.df(level_USA$`M1-SA: USA`, type = 'drift', selectlags = c("BIC"))
+adf.level.t.USA.M1.SA = ur.df(level_USA$`M1-SA: USA`, type = 'trend', selectlags = c("BIC"))
+interp_urdf(adf.level.n.USA.M1.SA, "5pct")
+interp_urdf(adf.level.d.USA.M1.SA, "5pct")
+interp_urdf(adf.level.t.USA.M1.SA, "5pct")
+#Differenced
+adf.diff.n.USA.M1.SA = ur.df(diff_USA$`M1-SA: USA`, type = 'none', selectlags = c("BIC"))
+adf.diff.d.USA.M1.SA = ur.df(diff_USA$`M1-SA: USA`, type = 'drift', selectlags = c("BIC"))
+adf.diff.t.USA.M1.SA = ur.df(diff_USA$`M1-SA: USA`, type = 'trend', selectlags = c("BIC"))
+interp_urdf(adf.diff.n.USA.M1.SA, "5pct")
+interp_urdf(adf.diff.d.USA.M1.SA, "5pct")
+interp_urdf(adf.diff.t.USA.M1.SA, "5pct")
+
+#For CAD.per.SDR
+#Level
+adf.level.n.USA.USD.per.SDR = ur.df(level_USA$`National Currency per SDR: USA`, type = 'none', selectlags = c("BIC"))
+adf.level.d.USA.USD.per.SDR = ur.df(level_USA$`National Currency per SDR: USA`, type = 'drift', selectlags = c("BIC"))
+adf.level.t.USA.USD.per.SDR = ur.df(level_USA$`National Currency per SDR: USA`, type = 'trend', selectlags = c("BIC"))
+interp_urdf(adf.level.n.USA.USD.per.SDR, "5pct")
+interp_urdf(adf.level.d.USA.USD.per.SDR, "5pct")
+interp_urdf(adf.level.t.USA.USD.per.SDR, "5pct")
+#Differenced
+adf.diff.n.USA.USD.per.SDR = ur.df(diff_USA$`National Currency per SDR: USA`, type = 'none', selectlags = c("BIC"))
+adf.diff.d.USA.USD.per.SDR = ur.df(diff_USA$`National Currency per SDR: USA`, type = 'drift', selectlags = c("BIC"))
+adf.diff.t.USA.USD.per.SDR = ur.df(diff_USA$`National Currency per SDR: USA`, type = 'trend', selectlags = c("BIC"))
+interp_urdf(adf.diff.n.USA.USD.per.SDR, "5pct")
+interp_urdf(adf.diff.d.USA.USD.per.SDR, "5pct")
+interp_urdf(adf.diff.t.USA.USD.per.SDR, "5pct")
+
+#For CPI
+#Level
+adf.level.n.USA.CPI = ur.df(level_USA$`CPI: USA`, type = 'none', selectlags = c("BIC"))
+adf.level.d.USA.CPI = ur.df(level_USA$`CPI: USA`, type = 'drift', selectlags = c("BIC"))
+adf.level.t.USA.CPI = ur.df(level_USA$`CPI: USA`, type = 'trend', selectlags = c("BIC"))
+interp_urdf(adf.level.n.USA.CPI, "5pct")
+interp_urdf(adf.level.d.USA.CPI, "5pct")
+interp_urdf(adf.level.t.USA.CPI, "5pct")
+#Differenced
+adf.diff.n.USA.CPI = ur.df(diff_USA$`CPI: USA`, type = 'none', selectlags = c("BIC"))
+adf.diff.d.USA.CPI = ur.df(diff_USA$`CPI: USA`, type = 'drift', selectlags = c("BIC"))
+adf.diff.t.USA.CPI = ur.df(diff_USA$`CPI: USA`, type = 'trend', selectlags = c("BIC"))
+interp_urdf(adf.diff.n.USA.CPI, "5pct")
+interp_urdf(adf.diff.d.USA.CPI, "5pct")
+interp_urdf(adf.diff.t.USA.CPI, "5pct")
+
+#For Interest.rate
+#Level
+adf.level.n.USA.Interest.rate = ur.df(level_USA$`Interest rate: USA`, type = 'none', selectlags = c("BIC"))
+adf.level.d.USA.Interest.rate = ur.df(level_USA$`Interest rate: USA`, type = 'drift', selectlags = c("BIC"))
+adf.level.t.USA.Interest.rate = ur.df(level_USA$`Interest rate: USA`, type = 'trend', selectlags = c("BIC"))
+interp_urdf(adf.level.n.USA.Interest.rate, "5pct")
+interp_urdf(adf.level.d.USA.Interest.rate, "5pct")
+interp_urdf(adf.level.t.USA.Interest.rate, "5pct")
+#Differenced
+adf.diff.n.USA.Interest.rate = ur.df(diff_USA$`Interest rate: USA`, type = 'none', selectlags = c("BIC"))
+adf.diff.d.USA.Interest.rate = ur.df(diff_USA$`Interest rate: USA`, type = 'drift', selectlags = c("BIC"))
+adf.diff.t.USA.Interest.rate = ur.df(diff_USA$`Interest rate: USA`, type = 'trend', selectlags = c("BIC"))
+interp_urdf(adf.diff.n.USA.Interest.rate, "5pct")
+interp_urdf(adf.diff.d.USA.Interest.rate, "5pct")
+interp_urdf(adf.diff.t.USA.Interest.rate, "5pct")
+
+#For real.GDP
+#Level
+adf.level.n.USA.rGDP = ur.df(level_USA$`Real GDP: USA`, type = 'none', selectlags = c("BIC"))
+adf.level.d.USA.rGDP = ur.df(level_USA$`Real GDP: USA`, type = 'drift', selectlags = c("BIC"))
+adf.level.t.USA.rGDP = ur.df(level_USA$`Real GDP: USA`, type = 'trend', selectlags = c("BIC"))
+interp_urdf(adf.level.n.USA.rGDP, "5pct")
+interp_urdf(adf.level.d.USA.rGDP, "5pct")
+interp_urdf(adf.level.t.USA.rGDP, "5pct")
+#Differenced
+adf.diff.n.USA.rGDP = ur.df(diff_USA$`Real GDP: USA`, type = 'none', selectlags = c("BIC"))
+adf.diff.d.USA.rGDP = ur.df(diff_USA$`Real GDP: USA`, type = 'drift', selectlags = c("BIC"))
+adf.diff.t.USA.rGDP = ur.df(diff_USA$`Real GDP: USA`, type = 'trend', selectlags = c("BIC"))
+interp_urdf(adf.diff.n.USA.rGDP, "5pct")
+interp_urdf(adf.diff.d.USA.rGDP, "5pct")
+interp_urdf(adf.diff.t.USA.rGDP, "5pct")    
