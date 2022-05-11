@@ -16,6 +16,10 @@ library(tsbox)
 library(ggplot2)
 pacman::p_load(ggpubr)
 library(ggpubr)
+pacman::p_load(tseries)
+library(tseries)
+pacman::p_load(urca)
+library(urca)
 
 IFS_03_27_2017_19_08_48_11_timeSeries_IFS_03_27_2017_19_08_48_11_timeSeries <- read_csv("Data/IFS_03-27-2017 19-08-48-11_timeSeries_IFS_03-27-2017 19-08-48-11_timeSeries.csv")
 
